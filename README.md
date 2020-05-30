@@ -42,6 +42,6 @@ Examples:
   https://img.shields.io/npm/v/fritzbox-checksum.svg
 [npm-fritzbox-checksum]: https://www.npmjs.com/package/fritzbox-checksum
 [ci-fritzbox-checksum-badge]:
-  https://github.com/lpinca/fritzbox-checksum/workflows/CI/badge.svg
+  https://img.shields.io/github/workflow/status/lpinca/fritzbox-checksum/CI/master?label=CI&logo=github
 [ci-fritzbox-checksum]:
   https://github.com/lpinca/fritzbox-checksum/actions?query=workflow%3ACI
