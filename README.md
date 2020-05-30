@@ -1,6 +1,7 @@
 # fritzbox-checksum
 
 [![Version npm][npm-fritzbox-checksum-badge]][npm-fritzbox-checksum]
+[![CI][ci-fritzbox-checksum-badge]][ci-fritzbox-checksum]
 
 CLI utility to calculate and optionally update the checksum of the FRITZ!Box
 backup file.
@@ -40,3 +41,7 @@ Examples:
 [npm-fritzbox-checksum-badge]:
   https://img.shields.io/npm/v/fritzbox-checksum.svg
 [npm-fritzbox-checksum]: https://www.npmjs.com/package/fritzbox-checksum
+[ci-fritzbox-checksum-badge]:
+  https://github.com/lpinca/fritzbox-checksum/workflows/CI/badge.svg
+[ci-fritzbox-checksum]:
+  https://github.com/lpinca/fritzbox-checksum/actions?query=workflow%3ACI
