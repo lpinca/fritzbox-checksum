@@ -22,7 +22,7 @@ const parser = new ArgumentParser({
 });
 
 parser.addArgument(['-o', '--output'], {
-  help: 'Write to file instead of stdout.',
+  help: 'Write to file instead of standard output.',
   metavar: 'FILE'
 });
 
@@ -34,7 +34,7 @@ parser.addArgument('--print-config', {
 });
 
 parser.addArgument('FILE', {
-  help: 'The configuration file. If omitted, read standard input.',
+  help: 'The backup file. If omitted, read standard input.',
   nargs: '?'
 });
 
