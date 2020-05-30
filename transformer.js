@@ -107,7 +107,11 @@ class Transformer extends Transform {
         this[kSection] = result[1] === '64' ? B64FILE : BINFILE;
         this[kCrc].update(Buffer.from(result[2] + '\0'));
       } else if ((result = END_OF_EXPORT_REGEX.exec(line))) {
-        const crc = this[kCrc].getValue().toString(16).toUpperCase();
+        const crc = this[kCrc]
+          .getValue()
+          .toString(16)
+          .padStart(8, '0')
+          .toUpperCase();
 
         line = line.replace(result[1], crc);
         this.emit('checksum', crc);
