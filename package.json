@@ -9,7 +9,7 @@
   "license": "MIT",
   "bin": "cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test/*.js"
   },
   "engines": {
     "node": ">=8"
@@ -26,5 +26,8 @@
   ],
   "dependencies": {
     "argparse": "^1.0.10"
+  },
+  "devDependencies": {
+    "tape": "^5.0.1"
   }
 }
