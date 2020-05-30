@@ -10,12 +10,13 @@ const NO_SECTION = 0;
 const CONFIGURATION_EXPORT = 1;
 const CFGFILE = 2;
 const B64FILE = 3;
+const BINFILE = 4;
 
 const START_OF_EXPORT_REGEX = /^\*{4} .+ CONFIGURATION EXPORT$/;
 const VARIABLE_DEFINITION_REGEX = /^(.+)=(.+)$/;
 const START_OF_CFGFILE_REGEX = /^\*{4} CFGFILE:(.+)$/;
 const EOF = '// EOF';
-const START_OF_B64FILE_REGEX = /^\*{4} B64FILE:(.+)$/;
+const START_OF_BXXFILE_REGEX = /^\*{4} B(64|IN)FILE:(.+)$/;
 const END_OF_FILE = '**** END OF FILE ****';
 const END_OF_EXPORT_REGEX = /^\*{4} END OF EXPORT ([A-Z0-9]{8}) \*{4}$/;
 
@@ -102,9 +103,9 @@ class Transformer extends Transform {
       } else if ((result = START_OF_CFGFILE_REGEX.exec(line))) {
         this[kSection] = CFGFILE;
         this[kCrc].update(Buffer.from(result[1] + '\0'));
-      } else if ((result = START_OF_B64FILE_REGEX.exec(line))) {
-        this[kSection] = B64FILE;
-        this[kCrc].update(Buffer.from(result[1] + '\0'));
+      } else if ((result = START_OF_BXXFILE_REGEX.exec(line))) {
+        this[kSection] = result[1] === '64' ? B64FILE : BINFILE;
+        this[kCrc].update(Buffer.from(result[2] + '\0'));
       } else if ((result = END_OF_EXPORT_REGEX.exec(line))) {
         const crc = this[kCrc].getValue().toString(16).toUpperCase();
 
@@ -125,11 +126,13 @@ class Transformer extends Transform {
       } else {
         assert.strictEqual(line, '');
       }
-    } else if (this[kSection] === B64FILE) {
+    } else if (this[kSection] === B64FILE || this[kSection] === BINFILE) {
       if (line === END_OF_FILE) {
         this[kSection] = CONFIGURATION_EXPORT;
       } else {
-        this[kCrc].update(Buffer.from(line + '\n', 'base64'));
+        const encoding = this[kSection] === B64FILE ? 'base64' : 'hex';
+
+        this[kCrc].update(Buffer.from(line, encoding));
       }
     }
 
