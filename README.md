@@ -39,7 +39,7 @@ Examples:
 [MIT](LICENSE)
 
 [npm-fritzbox-checksum-badge]:
-  https://img.shields.io/npm/v/fritzbox-checksum.svg
+  https://img.shields.io/npm/v/fritzbox-checksum.svg?logo=npm
 [npm-fritzbox-checksum]: https://www.npmjs.com/package/fritzbox-checksum
 [ci-fritzbox-checksum-badge]:
   https://img.shields.io/github/workflow/status/lpinca/fritzbox-checksum/CI/master?label=CI&logo=github
