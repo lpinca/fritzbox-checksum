@@ -1,7 +1,7 @@
 {
   "name": "fritzbox-checksum",
   "version": "1.0.0",
-  "description": "CLI utility to calculate the checksum of the FRITZ!Box configuration file",
+  "description": "CLI utility to calculate the checksum of the FRITZ!Box backup file",
   "homepage": "https://github.com/lpinca/fritzbox-checksum",
   "bugs": "https://github.com/lpinca/fritzbox-checksum/issues",
   "repository": "lpinca/fritzbox-checksum",

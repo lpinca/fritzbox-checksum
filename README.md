@@ -3,7 +3,7 @@
 [![Version npm][npm-fritzbox-checksum-badge]][npm-fritzbox-checksum]
 
 CLI utility to calculate and optionally update the checksum of the FRITZ!Box
-configuration file.
+backup file.
 
 ## Install
 
