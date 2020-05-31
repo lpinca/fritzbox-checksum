@@ -29,9 +29,9 @@ Optional arguments:
                         with the calculated one.
 
 Examples:
-  fritzbox-checksum config.export
-  fritzbox-checksum --print-config config.export
-  cat config.export | fritzbox-checksum --print-config
+  fritzbox-checksum backup.export
+  fritzbox-checksum --print-config backup.export
+  cat backup.export | fritzbox-checksum --print-config
 ```
 
 ## License

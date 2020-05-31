@@ -12,9 +12,9 @@ const { name, version } = require('./package');
 const parser = new ArgumentParser({
   epilog: [
     'Examples:',
-    `  ${name} config.export`,
-    `  ${name} --print-config config.export`,
-    `  cat config.export | ${name} --print-config`
+    `  ${name} backup.export`,
+    `  ${name} --print-config backup.export`,
+    `  cat backup.export | ${name} --print-config`
   ].join('\n'),
   formatterClass: RawDescriptionHelpFormatter,
   prog: name,
