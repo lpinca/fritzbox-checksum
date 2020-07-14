@@ -41,7 +41,7 @@ parser.addArgument('FILE', {
 const args = parser.parseArgs();
 const cwd = process.cwd();
 const source = args.FILE
-  ? fs.createReadStream(path.resolve(process.cwd(), args.FILE))
+  ? fs.createReadStream(path.resolve(cwd, args.FILE))
   : process.stdin;
 const destination = args.output
   ? fs.createWriteStream(path.resolve(cwd, args.output))
