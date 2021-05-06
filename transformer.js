@@ -76,6 +76,7 @@ class Transformer extends Transform {
   _flush(callback) {
     this[kDecoded] += this[kDecoder].end();
 
+    /* istanbul ignore if */
     if (this[kDecoded]) {
       this.push(this.handleLine(this[kDecoded]));
     }

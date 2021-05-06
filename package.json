@@ -9,7 +9,7 @@
   "license": "MIT",
   "bin": "cli.js",
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "nyc --reporter=lcov --reporter=text tape test/*.js"
   },
   "engines": {
     "node": ">=8"
@@ -28,6 +28,7 @@
     "argparse": "^1.0.10"
   },
   "devDependencies": {
+    "nyc": "^15.1.0",
     "tape": "^5.0.1"
   }
 }

@@ -2,6 +2,7 @@
 
 [![Version npm][npm-fritzbox-checksum-badge]][npm-fritzbox-checksum]
 [![CI][ci-fritzbox-checksum-badge]][ci-fritzbox-checksum]
+[![Coverage][coverage-fritzbox-checksum-badge]][coverage-fritzbox-checksum]
 
 CLI utility to calculate and optionally update the checksum of the FRITZ!Box
 backup file.
@@ -45,3 +46,7 @@ Examples:
   https://img.shields.io/github/workflow/status/lpinca/fritzbox-checksum/CI/master?label=CI&logo=github
 [ci-fritzbox-checksum]:
   https://github.com/lpinca/fritzbox-checksum/actions?query=workflow%3ACI
+[coverage-fritzbox-checksum-badge]:
+  https://img.shields.io/coveralls/lpinca/fritzbox-checksum/master.svg?logo=coveralls
+[coverage-fritzbox-checksum]:
+  https://coveralls.io/r/lpinca/fritzbox-checksum?branch=master

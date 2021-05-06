@@ -25,3 +25,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install
       - run: npm test
+      - uses: coverallsapp/github-action@v1.1.2
+        if: matrix.node == 14
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
