@@ -16,20 +16,20 @@ npm install -g fritzbox-checksum
 ## Usage
 
 ```
-usage: fritzbox-checksum [-h] [-v] [-o FILE] [--print-config] [FILE]
+usage: fritzbox-checksum [-h] [-o FILE] [--print-config] [-v] [FILE]
 
-Positional arguments:
-  FILE                  The backup file. If omitted, read standard input.
+positional arguments:
+  FILE                  the backup file (default: stdin)
 
-Optional arguments:
-  -h, --help            Show this help message and exit.
-  -v, --version         Show program's version number and exit.
+optional arguments:
+  -h, --help            show this help message and exit
   -o FILE, --output FILE
-                        Write to file instead of standard output.
-  --print-config        Print the whole configuration updating the checksum
-                        with the calculated one.
+                        write to file instead of stdout
+  --print-config        print the whole configuration updating the checksum with
+                        the calculated one
+  -v, --version         show program's version number and exit
 
-Examples:
+examples:
   fritzbox-checksum backup.export
   fritzbox-checksum --print-config backup.export
   cat backup.export | fritzbox-checksum --print-config

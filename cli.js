@@ -11,7 +11,7 @@ const { name, version } = require('./package');
 
 const parser = new ArgumentParser({
   epilog: [
-    'Examples:',
+    'examples:',
     `  ${name} backup.export`,
     `  ${name} --print-config backup.export`,
     `  cat backup.export | ${name} --print-config`
@@ -21,21 +21,21 @@ const parser = new ArgumentParser({
 });
 
 parser.add_argument('-o', '--output', {
-  help: 'Write to file instead of standard output.',
+  help: 'write to file instead of stdout',
   metavar: 'FILE'
 });
 
 parser.add_argument('--print-config', {
   action: 'store_true',
   help:
-    'Print the whole configuration updating the checksum with the calculated ' +
-    'one.'
+    'print the whole configuration updating the checksum with the calculated ' +
+    'one'
 });
 
 parser.add_argument('-v', '--version', { action: 'version', version });
 
 parser.add_argument('FILE', {
-  help: 'The backup file. If omitted, read standard input.',
+  help: 'the backup file (default: stdin)',
   nargs: '?'
 });
 
