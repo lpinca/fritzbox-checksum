@@ -12,7 +12,7 @@
     "test": "nyc --reporter=lcov --reporter=text tape test/*.js"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "files": [
     "cli.js",
