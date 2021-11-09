@@ -25,7 +25,7 @@
     "fritzbox"
   ],
   "dependencies": {
-    "argparse": "^1.0.10"
+    "argparse": "^2.0.1"
   },
   "devDependencies": {
     "nyc": "^15.1.0",

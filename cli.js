@@ -16,29 +16,30 @@ const parser = new ArgumentParser({
     `  ${name} --print-config backup.export`,
     `  cat backup.export | ${name} --print-config`
   ].join('\n'),
-  formatterClass: RawDescriptionHelpFormatter,
-  prog: name,
-  version
+  formatter_class: RawDescriptionHelpFormatter,
+  prog: name
 });
 
-parser.addArgument(['-o', '--output'], {
+parser.add_argument('-o', '--output', {
   help: 'Write to file instead of standard output.',
   metavar: 'FILE'
 });
 
-parser.addArgument('--print-config', {
-  action: 'storeTrue',
+parser.add_argument('--print-config', {
+  action: 'store_true',
   help:
     'Print the whole configuration updating the checksum with the calculated ' +
     'one.'
 });
 
-parser.addArgument('FILE', {
+parser.add_argument('-v', '--version', { action: 'version', version });
+
+parser.add_argument('FILE', {
   help: 'The backup file. If omitted, read standard input.',
   nargs: '?'
 });
 
-const args = parser.parseArgs();
+const args = parser.parse_args();
 const cwd = process.cwd();
 const source = args.FILE
   ? fs.createReadStream(path.resolve(cwd, args.FILE))
