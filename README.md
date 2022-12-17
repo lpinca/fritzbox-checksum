@@ -43,7 +43,7 @@ examples:
   https://img.shields.io/npm/v/fritzbox-checksum.svg?logo=npm
 [npm-fritzbox-checksum]: https://www.npmjs.com/package/fritzbox-checksum
 [ci-fritzbox-checksum-badge]:
-  https://img.shields.io/github/workflow/status/lpinca/fritzbox-checksum/CI/master?label=CI&logo=github
+  https://img.shields.io/github/actions/workflow/status/lpinca/fritzbox-checksum/ci.yml?branch=master&label=CI&logo=github
 [ci-fritzbox-checksum]:
   https://github.com/lpinca/fritzbox-checksum/actions?query=workflow%3ACI
 [coverage-fritzbox-checksum-badge]:
